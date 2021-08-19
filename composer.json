@@ -1,0 +1,23 @@
+{
+    "name": "hexlet/code",
+    "type": "lib",
+    "description": "Brain games",
+    "homepage": "https://github.com/Maron4ik/php-project-lvl1",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Maron\\PhpProjectLvl1\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Alexey Maron",
+            "email": "maron.alexey@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {},
+    "bin": [
+        "bin/brain-games"
+    ]
+}
