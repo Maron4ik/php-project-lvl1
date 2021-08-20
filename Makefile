@@ -2,10 +2,16 @@ install:
 	composer install
 
 brain-games:
-	@./bin/brain-games
+# 	@./bin/brain-games
+	php bin/brain-games
 
 validate:
-	composer validate $(FILE)
+	composer validate
+
+status:
+	git status
+
+
 
 
 
