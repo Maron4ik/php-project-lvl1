@@ -1,0 +1,7 @@
+#!/usr/bin/env php
+
+<?php
+
+require('autoloadpath.php');
+
+Brain\Games\Even\numberEven();

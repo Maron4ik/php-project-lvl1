@@ -1,13 +1,17 @@
 {
     "name": "hexlet/code",
-    "bin": ["bin/brain-games"],
+    "bin": [
+        "bin/brain-games",
+        "bin/brain-even"
+    ],
     "type": "lib",
     "description": "Brain games",
     "homepage": "https://github.com/Maron4ik/php-project-lvl1",
     "license": "MIT",
     "autoload": {
         "files": [
-            "src/Cli.php"
+            "src/Cli.php",
+            "src/Even.php"
         ]
     },
     "authors": [
