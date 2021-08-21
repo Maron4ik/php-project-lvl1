@@ -8,8 +8,8 @@ brain-games:
 validate:
 	composer validate
 
-status:
-	git status
+lint:
+	composer exec --verbose phpcs -- --standard=PSR12 src bin
 
 
 
