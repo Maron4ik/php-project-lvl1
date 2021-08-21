@@ -13,12 +13,14 @@ function numberEven(): void
     $name = prompt('May I have your name?');
     line("Hello, %s!", $name);
     line("Answer \"yes\" if the number is even, otherwise answer \"no\".");
-    for($i = 0; $i < 3; $i++) {
+    for ($i = 0; $i < 3; $i++) {
         $randomNumber = rand(2, 20);
         $currectAnswer = '';
         if ($randomNumber % 2 == 0) {
             $currectAnswer = 'yes';
-        } else $currectAnswer = 'no';
+        } else {
+            $currectAnswer = 'no';
+        }
 
         line("Question: %s", $randomNumber);
         $answer = prompt("Your answer");
