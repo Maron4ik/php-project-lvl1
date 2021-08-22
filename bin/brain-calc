@@ -4,4 +4,4 @@
 
 require('autoloadpath.php');
 
-BrainGames\Games\Even\numberEven();
+BrainGames\Games\Calc\numberCalc();

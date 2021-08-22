@@ -9,6 +9,10 @@ brain-even:
 	@#./bin/brain-even
 	php bin/brain-even
 
+brain-calc:
+	@#./bin/brain-calc
+	php bin/brain-calc
+
 validate:
 	composer validate
 
