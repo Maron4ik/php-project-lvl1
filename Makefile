@@ -13,6 +13,10 @@ brain-calc:
 	@#./bin/brain-calc
 	php bin/brain-calc
 
+brain-gcd:
+	@#./bin/brain-gcd
+	php bin/brain-gcd
+
 validate:
 	composer validate
 
