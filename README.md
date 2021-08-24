@@ -8,3 +8,5 @@ Brain-calc
 <a href="https://asciinema.org/a/il7rc8J6spJXa2PAZ1OuMM6cS" target="_blank"><img src="https://asciinema.org/a/il7rc8J6spJXa2PAZ1OuMM6cS.svg" /></a>
 Brain-gcd
 <a href="https://asciinema.org/a/V2DcaRWV3aXH57xt8RecGuouC" target="_blank"><img src="https://asciinema.org/a/V2DcaRWV3aXH57xt8RecGuouC.svg" /></a>
+Brain-progression
+<a href="https://asciinema.org/a/b4eKLuAQnYug5DUX5XoMQjScf" target="_blank"><img src="https://asciinema.org/a/b4eKLuAQnYug5DUX5XoMQjScf.svg" /></a>

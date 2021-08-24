@@ -41,7 +41,7 @@ function progression()
             $counter += 1;
         } else {
             line("'%s' is wrong answer ;(. Correct answer was '%s'.", $answer, $correctAnswer);
-            line("Let's try again, %s!" . $name);
+            line("Let's try again, %s!" , $name);
             break;
         }
         if ($counter === Engine\ROUNDCOUNT) {
