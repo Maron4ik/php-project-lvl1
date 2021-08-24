@@ -21,6 +21,10 @@ brain-progression:
 	@#./bin/brain-progression
 	php bin/brain-progression
 
+brain-prime:
+	@#./bin/brain-prime
+	php bin/brain-prime
+
 validate:
 	composer validate
 

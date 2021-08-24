@@ -35,7 +35,7 @@ function progression()
         $progression = implode(' ', $array);
 
         line('Question: %s', $progression);
-        $answer = prompt("Your answer");
+        $answer = prompt("Your answer:");
         if ($correctAnswer == $answer) {
             line('Correct!');
             $counter += 1;
