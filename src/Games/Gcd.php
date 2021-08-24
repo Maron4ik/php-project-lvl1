@@ -22,6 +22,7 @@ function gcd()
         $currectAnswer = gmp_gcd($randNumber1, $randNumber2);
         line('Question: %s %s', $randNumber1, $randNumber2);
         $answer = prompt("Your answer");
+
         if ($answer == $currectAnswer) {
             line('Currect!');
             $counter += 1;
