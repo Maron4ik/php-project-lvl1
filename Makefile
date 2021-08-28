@@ -22,7 +22,7 @@ brain-progression:
 	php bin/brain-progression
 
 brain-prime:
-	@#./bin/brain-prime
+	#./bin/brain-prime
 	php bin/brain-prime
 
 validate:
@@ -30,10 +30,3 @@ validate:
 
 lint:
 	composer exec --verbose phpcs -- --standard=PSR12 src bin
-
-
-
-
-
-
-.PHONY: app test log doc

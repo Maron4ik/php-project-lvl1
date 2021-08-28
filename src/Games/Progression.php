@@ -7,10 +7,6 @@ use BrainGames\Engine;
 use function cli\line;
 use function cli\prompt;
 
-// phpcs:disable
-error_reporting(0);
-// phpcs:enable
-
 function progression()
 {
     $name = Engine\greeting();
