@@ -20,17 +20,17 @@ function numberEven(): void
 
 function prepareQuestion(): array
 {
-        $randomNumber = rand(2, 20);
-        $correctAnswer = '';
-        if ($randomNumber % 2 == 0) {
-            $correctAnswer = 'yes';
-        } else {
-            $correctAnswer = 'no';
-        }
+    $randomNumber = rand(2, 20);
+    $correctAnswer = '';
+    if ($randomNumber % 2 == 0) {
+        $correctAnswer = 'yes';
+    } else {
+        $correctAnswer = 'no';
+    }
 
     $question = $randomNumber;
 
-    return ['question' => $question, 'correctAnswer' => (string) $correctAnswer];
+    return ['question' => $question, 'correctAnswer' => (string)$correctAnswer];
 }
 
 //function numberEven(): void

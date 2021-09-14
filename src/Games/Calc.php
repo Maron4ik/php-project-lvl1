@@ -8,7 +8,6 @@ use BrainGames\Cli;
 use function cli\line;
 use function cli\prompt;
 
-
 function numberCalc(): void
 {
     $gameData = [
@@ -37,5 +36,5 @@ function prepareQuestion(): array
 
     $question = "{$randNumber1} {$randCharacter} {$randNumber2}";
 
-    return ['question' => $question, 'correctAnswer' => (string) $correctAnswer];
+    return ['question' => $question, 'correctAnswer' => (string)$correctAnswer];
 }

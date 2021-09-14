@@ -7,7 +7,6 @@ use BrainGames\Engine;
 use function cli\line;
 use function cli\prompt;
 
-
 function prime(): void
 {
     $gameData = [
@@ -36,5 +35,5 @@ function prepareQuestion(): array
 
     $question = $randomNumber;
 
-    return ['question' => $question, 'correctAnswer' => (string) $correctAnswer];
+    return ['question' => $question, 'correctAnswer' => (string)$correctAnswer];
 }
