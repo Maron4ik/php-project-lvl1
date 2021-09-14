@@ -7,28 +7,23 @@ use BrainGames\Engine;
 use function cli\line;
 use function cli\prompt;
 
-function gcd()
+function gcd(): void
 {
-    $name = Engine\greeting();
-    $counter = 0;
-    line('Find the greatest common divisor of given numbers.');
-    for ($i = 0; $i < Engine\ROUNDCOUNT; $i++) {
-        $randNumber1 = rand(1, 10);
-        $randNumber2 = rand(1, 10);
-        $currectAnswer = gmp_gcd($randNumber1, $randNumber2);
-        line('Question: %s %s', $randNumber1, $randNumber2);
-        $answer = prompt("Your answer");
+    $gameData = [
+        prepareQuestion(),
+        prepareQuestion(),
+        prepareQuestion()
+    ];
+    $rules = 'Find the greatest common divisor of given numbers.';
+    Engine\newEngine($gameData, $rules);
+}
 
-        if ($answer == $currectAnswer) {
-            line('Currect!');
-            $counter += 1;
-        } else {
-            line("'%s' is wrong answer ;(. Correct answer was '%s'", $answer, $currectAnswer);
-            line("Let's try again, %s!", $name);
-            break;
-        }
-        if ($counter === 3) {
-            line('Congratulations, %s!', $name);
-        }
-    }
+function prepareQuestion(): array
+{
+    $randNumber1 = rand(1, 10);
+    $randNumber2 = rand(1, 10);
+    $correctAnswer = gmp_gcd($randNumber1, $randNumber2);
+    $question = "{$randNumber1}, {$randNumber2}";
+
+    return ['question' => $question, 'correctAnswer' => (string) $correctAnswer];
 }
