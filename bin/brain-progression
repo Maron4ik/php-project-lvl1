@@ -2,6 +2,6 @@
 
 <?php
 
-require('autoloadpath.php');
+require('brain-games.php');
 
 BrainGames\Games\Progression\progression();
