@@ -2,6 +2,6 @@
 
 <?php
 
-require('brain-games');
+require 'autoload.php';
 
 BrainGames\Games\Calc\numberCalc();
