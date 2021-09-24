@@ -2,6 +2,6 @@
 
 <?php
 
-require('brain-games.php');
+require('brain-games');
 
 BrainGames\Games\Progression\progression();
