@@ -23,7 +23,6 @@ function prepareQuestion(): array
     $randomFirstNumber = rand(0, 10);
     $randomStep = rand(1, 5);
     $randomArrLength = rand(5, 10);
-    $randomIndex = rand(0, $randomArrLength);
     $array = [];
 
     for ($j = 0; $j < $randomArrLength; $j++) {
@@ -31,6 +30,7 @@ function prepareQuestion(): array
         $array[$j] = $randomFirstNumber;
     }
 
+    $randomIndex = rand(0, count($array) - 1);
     $correctAnswer = $array[$randomIndex];
     $array[$randomIndex] = '..';
     $progression = implode(' ', $array);
