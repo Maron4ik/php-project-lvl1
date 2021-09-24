@@ -7,6 +7,8 @@ use function cli\prompt;
 
 const ROUNDCOUNT = 3;
 
+//mane engine of games
+
 function newEngine(array $gameData, string $rules)
 {
     line('Welcome to the Brain Game!');

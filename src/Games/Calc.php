@@ -38,3 +38,4 @@ function prepareQuestion(): array
 
     return ['question' => $question, 'correctAnswer' => (string)$correctAnswer];
 }
+//calc
