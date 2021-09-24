@@ -23,7 +23,7 @@ function prepareQuestion(): array
     $randNumber1 = rand(1, 10);
     $randNumber2 = rand(1, 10);
     $correctAnswer = GetGreatestDivisor($randNumber1, $randNumber2);
-    $question = "{$randNumber1}, {$randNumber2}";
+    $question = "{$randNumber1} {$randNumber2}";
 
     return ['question' => $question, 'correctAnswer' => (string)$correctAnswer];
 }
