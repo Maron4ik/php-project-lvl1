@@ -9,7 +9,7 @@ const ROUNDCOUNT = 3;
 
 //mane engine of games
 
-function newEngine(array $gameData, string $rules)
+function newEngine(array $gameData, string $rules): void
 {
     line('Welcome to the Brain Game!');
     $name = prompt('May I have your name?');

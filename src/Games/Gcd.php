@@ -28,7 +28,7 @@ function prepareQuestion(): array
     return ['question' => $question, 'correctAnswer' => (string)$correctAnswer];
 }
 
-function GetGreatestDivisor($num1, $num2)
+function GetGreatestDivisor(int $num1, int $num2): int
 {
     $min = min($num1, $num2);
 

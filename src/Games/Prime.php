@@ -35,6 +35,6 @@ function prepareQuestion(): array
 
     $question = $randomNumber;
 
-    return ['question' => $question, 'correctAnswer' => (string)$correctAnswer];
+    return ['question' => $question, 'correctAnswer' => $correctAnswer];
 }
 //prime
