@@ -22,8 +22,23 @@ function prepareQuestion(): array
 {
     $randNumber1 = rand(1, 10);
     $randNumber2 = rand(1, 10);
-    $correctAnswer = gmp_gcd($randNumber1, $randNumber2);
+    $correctAnswer = GetGreatestDivisor($randNumber1, $randNumber2);
     $question = "{$randNumber1}, {$randNumber2}";
 
     return ['question' => $question, 'correctAnswer' => (string) $correctAnswer];
+}
+
+function GetGreatestDivisor($num1, $num2)
+{
+    $min = min($num1, $num2);
+
+    while($min > 1)
+    {
+        if($num1%$min == 0 && $num2%$min == 0) return $min;
+        else
+        {
+            $min--;
+        }
+    }
+    return 1;
 }
