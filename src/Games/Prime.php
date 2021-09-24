@@ -20,10 +20,10 @@ function prime(): void
 
 function prepareQuestion(): array
 {
-    $randomNumber = rand(0, 100);
-    $dividerCounter = 0;
-    for ($j = 1; $j < $randomNumber; $j++) {
-        if ($randomNumber % $j == 0) {
+    $randomNumber = rand(1, 100);
+    $dividerCounter = 1;
+    for ($i = 1; $i < $randomNumber; $i++) {
+        if ($randomNumber % $i == 0) {
             $dividerCounter++;
         }
     }
