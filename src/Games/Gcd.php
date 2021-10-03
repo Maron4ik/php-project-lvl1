@@ -1,44 +1,29 @@
 <?php
 
-namespace BrainGames\Games\Gcd;
+namespace BrainGames\Games;
 
-use BrainGames\Engine;
+use function BrainGames\runEngine;
 
-use function cli\line;
-use function cli\prompt;
-
-function gcd(): void
+function getGCD($firstNumber, $secondNumber)
 {
-    $gameData = [
-        prepareQuestion(),
-        prepareQuestion(),
-        prepareQuestion()
-    ];
-    $rules = 'Find the greatest common divisor of given numbers.';
-    Engine\newEngine($gameData, $rules);
-}
-
-function prepareQuestion(): array
-{
-    $randNumber1 = rand(1, 10);
-    $randNumber2 = rand(1, 10);
-    $correctAnswer = GetGreatestDivisor($randNumber1, $randNumber2);
-    $question = "{$randNumber1} {$randNumber2}";
-
-    return ['question' => $question, 'correctAnswer' => (string)$correctAnswer];
-}
-
-function GetGreatestDivisor(int $num1, int $num2): int
-{
-    $min = min($num1, $num2);
-
-    while ($min > 1) {
-        if ($num1 % $min == 0 && $num2 % $min == 0) {
-            return $min;
-        } else {
-            $min--;
-        }
+    if ($secondNumber > 0) {
+        return getGCD($secondNumber, $firstNumber % $secondNumber);
+    } else {
+        return abs($firstNumber);
     }
-    return 1;
 }
-//gcd
+
+function runGcdGame()
+{
+    $getRightAnswerForRound = function () {
+        $randomTopNumber = 100;
+        $firstNumber = (int)rand(0, $randomTopNumber);
+        $secondNumber = (int)rand(0, $randomTopNumber);
+        $rightAnswer = getGCD($firstNumber, $secondNumber);
+        $roundQuestion = "{$firstNumber} and {$secondNumber}";
+
+        return ['roundQuestion' => $roundQuestion, 'rightAnswer' => $rightAnswer];
+    };
+
+    runEngine($getRightAnswerForRound, 'Find the greatest common divisor of given numbers.');
+}

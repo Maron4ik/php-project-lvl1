@@ -1,41 +1,44 @@
 <?php
 
-namespace BrainGames\Games\Calc;
+namespace BrainGames\Games;
 
-use BrainGames\Engine;
-use BrainGames\Cli;
+use function BrainGames\runEngine;
 
-use function cli\line;
-use function cli\prompt;
-
-function numberCalc(): void
+function generateComputedExpression($firstNumber, $secondNumber, $operation)
 {
-    $gameData = [
-        prepareQuestion(),
-        prepareQuestion(),
-        prepareQuestion()
-    ];
-    $rules = 'What is the result of the expression?';
-    Engine\newEngine($gameData, $rules);
-}
-
-function prepareQuestion(): array
-{
-    $characters = '+-*';
-    $randCharacter = $characters[rand(0, strlen($characters) - 1)];
-    $randNumber1 = rand(1, 10);
-    $randNumber2 = rand(1, 10);
-
-    if ($randCharacter === '+') {
-        $correctAnswer = $randNumber1 + $randNumber2;
-    } elseif ($randCharacter === '-') {
-        $correctAnswer = $randNumber1 - $randNumber2;
-    } else {
-        $correctAnswer = $randNumber1 * $randNumber2;
+    switch ($operation) {
+        case '+':
+            $result = $firstNumber + $secondNumber;
+            break;
+        case '-':
+            $result = $firstNumber - $secondNumber;
+            break;
+        case '*':
+            $result = $firstNumber * $secondNumber;
+            break;
+        default:
+            return null;
+            break;
     }
 
-    $question = "{$randNumber1} {$randCharacter} {$randNumber2}";
-
-    return ['question' => $question, 'correctAnswer' => (string)$correctAnswer];
+    return $result;
 }
-//calc
+
+function runCalculationGame()
+{
+    $getRightAnswerForRound = function () {
+        $randomTopNumber = 10;
+        $firstNumber = (int)rand(0, $randomTopNumber);
+        $secondNumber = (int)rand(0, $randomTopNumber);
+        $operations = ['+', '-', '*'];
+        $randKey = array_rand($operations);
+        $operation = $operations[$randKey];
+        $rightAnswer = generateComputedExpression($firstNumber, $secondNumber, $operation);
+
+        $roundQuestion = "{$firstNumber} {$operation} {$secondNumber}";
+
+        return ['roundQuestion' => $roundQuestion, 'rightAnswer' => $rightAnswer];
+    };
+
+    runEngine($getRightAnswerForRound, 'What is the result of the expression?');
+}

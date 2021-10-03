@@ -1,42 +1,33 @@
 <?php
 
-namespace BrainGames\Games\Progression;
+namespace BrainGames\Games;
 
-use BrainGames\Engine;
+use function BrainGames\runEngine;
 
-use function cli\line;
-use function cli\prompt;
-
-function progression(): void
+function generateProgression($firstNumber, $lastNumber, $numberStepProgression)
 {
-    $gameData = [
-        prepareQuestion(),
-        prepareQuestion(),
-        prepareQuestion()
-    ];
-    $rules = 'What number is missing in the progression?';
-    Engine\newEngine($gameData, $rules);
-}
-
-function prepareQuestion(): array
-{
-    $randomFirstNumber = rand(0, 10);
-    $randomStep = rand(1, 5);
-    $randomArrLength = rand(5, 10);
-    $array = [];
-
-    for ($j = 0; $j < $randomArrLength; $j++) {
-        $randomFirstNumber += $randomStep;
-        $array[$j] = $randomFirstNumber;
+    $arithmeticProgression = [];
+    for ($i = $firstNumber; $i < $lastNumber; $i += $numberStepProgression) {
+        $arithmeticProgression[] = $i;
     }
 
-    $randomIndex = rand(0, count($array) - 1);
-    $correctAnswer = $array[$randomIndex];
-    $array[$randomIndex] = '..';
-    $progression = implode(' ', $array);
-
-    $question = $progression;
-
-    return ['question' => $question, 'correctAnswer' => (string) $correctAnswer];
+    return $arithmeticProgression;
 }
-//progression
+
+function runProgressionGame()
+{
+    $getRightAnswerForRound = function () {
+        $randomLastNumber = 20;
+        $randomFirstNumber = rand(0, 2);
+        $randomStepProgression = rand(0, 3);
+        $arithmeticProgression = generateProgression($randomFirstNumber, $randomLastNumber, $randomStepProgression);
+        $skippedKey = array_rand($arithmeticProgression);
+        $rightAnswer = $arithmeticProgression[$skippedKey];
+        $arithmeticProgression[$skippedKey] = '..';
+        $roundQuestion = implode(' ', $arithmeticProgression);
+
+        return ['roundQuestion' => $roundQuestion, 'rightAnswer' => $rightAnswer];
+    };
+
+    runEngine($getRightAnswerForRound, 'What number is missing in the progression?');
+}

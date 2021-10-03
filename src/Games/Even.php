@@ -1,34 +1,23 @@
 <?php
 
-namespace BrainGames\Games\Even;
+namespace BrainGames\Games;
 
-use BrainGames\Engine;
+use function BrainGames\runEngine;
 
-use function cli\line;
-use function cli\prompt;
-
-function numberEven(): void
+function isEven($number)
 {
-    $gameData = [
-        prepareQuestion(),
-        prepareQuestion(),
-        prepareQuestion()
-    ];
-    $rules = "Answer \"yes\" if the number is even, otherwise answer \"no\".";
-    Engine\newEngine($gameData, $rules);
+    return $number % 2 === 0;
 }
-
-function prepareQuestion(): array
+function runEvenGame()
 {
-    $randomNumber = rand(2, 20);
-    $correctAnswer = '';
-    if ($randomNumber % 2 == 0) {
-        $correctAnswer = 'yes';
-    } else {
-        $correctAnswer = 'no';
-    }
+    $getRightAnswerForRound = function () {
+        $randomTopNumber = 100;
+        $number = rand(0, $randomTopNumber);
+        $rightAnswer = isEven($number) ? 'yes' : 'no';
+        $roundQuestion = $number;
 
-    $question = $randomNumber;
+        return ['roundQuestion' => $roundQuestion, 'rightAnswer' => $rightAnswer];
+    };
 
-    return ['question' => $question, 'correctAnswer' => $correctAnswer];
+    runEngine($getRightAnswerForRound, 'Answer "yes" if the number is even, otherwise answer "no".');
 }

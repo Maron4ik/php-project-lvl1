@@ -1,34 +1,34 @@
 <?php
 
-namespace BrainGames\Engine;
+namespace BrainGames;
 
 use function cli\line;
 use function cli\prompt;
 
-const ROUNDCOUNT = 3;
+const ITERATIONS_COUNT = 3;
 
-//mane engine of games
-
-function newEngine(array $gameData, string $rules): void
+function runEngine($getRightAnswerForRound, $question)
 {
     line('Welcome to the Brain Game!');
+    line($question);
     $name = prompt('May I have your name?');
-    line("Hello, %s!", $name);
+    line('Hello, %s!', $name);
 
-    line($rules);
-    for ($i = 0; $i < ROUNDCOUNT; $i++) {
-        $question = $gameData[$i]['question'];
-        $correctAnswer = $gameData[$i]['correctAnswer'];
+    for ($i = 0; $i < ITERATIONS_COUNT; $i++) {
+        ['roundQuestion' => $roundQuestion, 'rightAnswer' => $rightAnswer] = $getRightAnswerForRound();
 
-        line("Question: {$question}");
-        $answer = prompt('Your answer');
-        if ($answer === $correctAnswer) {
+        line("Question: {$roundQuestion}");
+        $answerUser = prompt('Your answer');
+
+        if ($answerUser == $rightAnswer) {
             line('Correct!');
         } else {
-            line("'{$answer}' is wrong answer ;(. Correct answer was '{$correctAnswer}'.");
-            line("Let's try again, %s!", $name);
+            line("{$answerUser}  is wrong answer ;(. Correct answer was {$rightAnswer}");
+            line("Let's try again, {$name}!");
             return;
         }
     }
-    line('Congratulations, %s!', $name);
+
+    line("Congratulations, {$name}!");
+    return;
 }
