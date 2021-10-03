@@ -4,7 +4,7 @@ namespace BrainGames\Games;
 
 use function BrainGames\runEngine;
 
-function getGCD($firstNumber, $secondNumber): int
+function getGCD(int $firstNumber, int $secondNumber): float|int
 {
     if ($secondNumber > 0) {
         return getGCD($secondNumber, $firstNumber % $secondNumber);
@@ -15,10 +15,10 @@ function getGCD($firstNumber, $secondNumber): int
 
 function runGcdGame(): void
 {
-    $getRightAnswerForRound = function () {
+    $getRightAnswerForRound = function (): array {
         $randomTopNumber = 100;
-        $firstNumber = (int)rand(0, $randomTopNumber);
-        $secondNumber = (int)rand(0, $randomTopNumber);
+        $firstNumber = rand(0, $randomTopNumber);
+        $secondNumber = rand(0, $randomTopNumber);
         $rightAnswer = getGCD($firstNumber, $secondNumber);
         $roundQuestion = "{$firstNumber} {$secondNumber}";
 

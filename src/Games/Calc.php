@@ -18,7 +18,6 @@ function generateComputedExpression(int $firstNumber, int $secondNumber, string 
             break;
         default:
             return null;
-            break;
     }
 
     return $result;
@@ -40,5 +39,5 @@ function runCalculationGame(): void
         return ['roundQuestion' => $roundQuestion, 'rightAnswer' => $rightAnswer];
     };
 
-    runEngine($getRightAnswerForRound, 'What is the result of the expression?');
+    runEngine((array)$getRightAnswerForRound, 'What is the result of the expression?');
 }
