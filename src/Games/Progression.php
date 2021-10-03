@@ -6,7 +6,7 @@ use function BrainGames\runEngine;
 
 function runProgressionGame(): void
 {
-    $getRightAnswerForRound = function (): array {
+    $getRightAnswerForRound = function () {
         $randomFirstNumber = rand(0, 10);
         $randomStepProgression = rand(1, 5);
         $randomArrLength = rand(5, 10);

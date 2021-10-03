@@ -15,7 +15,7 @@ function getGCD(int $firstNumber, int $secondNumber): float|int
 
 function runGcdGame(): void
 {
-    $getRightAnswerForRound = function (): array {
+    $getRightAnswerForRound = function () {
         $randomTopNumber = 100;
         $firstNumber = rand(0, $randomTopNumber);
         $secondNumber = rand(0, $randomTopNumber);
