@@ -6,4 +6,4 @@ use function BrainGames\Games\runPrimeGame;
 
 require 'autoload.php';
 
-runPrimeGame();mes\Games\Prime\prime();
+runPrimeGame();
