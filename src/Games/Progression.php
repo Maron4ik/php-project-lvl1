@@ -17,7 +17,7 @@ function generateProgression($firstNumber, $lastNumber, $numberStepProgression)
 function runProgressionGame()
 {
     $getRightAnswerForRound = function () {
-        $randomLastNumber = 20;
+        $randomLastNumber = 100;
         $randomFirstNumber = rand(0, 2);
         $randomStepProgression = rand(0, 3);
         $arithmeticProgression = generateProgression($randomFirstNumber, $randomLastNumber, $randomStepProgression);
