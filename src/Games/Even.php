@@ -4,11 +4,11 @@ namespace BrainGames\Games;
 
 use function BrainGames\runEngine;
 
-function isEven($number)
+function isEven($number): bool
 {
     return $number % 2 === 0;
 }
-function runEvenGame()
+function runEvenGame(): void
 {
     $getRightAnswerForRound = function () {
         $randomTopNumber = 100;

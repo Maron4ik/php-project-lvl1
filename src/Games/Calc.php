@@ -4,7 +4,7 @@ namespace BrainGames\Games;
 
 use function BrainGames\runEngine;
 
-function generateComputedExpression($firstNumber, $secondNumber, $operation)
+function generateComputedExpression(int $firstNumber, int $secondNumber, string $operation): ?int
 {
     switch ($operation) {
         case '+':
@@ -24,12 +24,12 @@ function generateComputedExpression($firstNumber, $secondNumber, $operation)
     return $result;
 }
 
-function runCalculationGame()
+function runCalculationGame(): void
 {
-    $getRightAnswerForRound = function () {
+    $getRightAnswerForRound = function (): array {
         $randomTopNumber = 10;
-        $firstNumber = (int)rand(0, $randomTopNumber);
-        $secondNumber = (int)rand(0, $randomTopNumber);
+        $firstNumber = rand(0, $randomTopNumber);
+        $secondNumber = rand(0, $randomTopNumber);
         $operations = ['+', '-', '*'];
         $randKey = array_rand($operations);
         $operation = $operations[$randKey];

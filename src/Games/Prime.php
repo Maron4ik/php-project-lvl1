@@ -4,7 +4,7 @@ namespace BrainGames\Games;
 
 use function BrainGames\runEngine;
 
-function isPrime($number)
+function isPrime($number): bool
 {
     if ($number < 2) {
         return false;
@@ -28,7 +28,7 @@ function isPrime($number)
     return true;
 }
 
-function runPrimeGame()
+function runPrimeGame(): void
 {
     $getRightAnswerForRound = function () {
         $randomTopNumber = 100;

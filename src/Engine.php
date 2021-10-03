@@ -7,7 +7,7 @@ use function cli\prompt;
 
 const ITERATIONS_COUNT = 3;
 
-function runEngine($getRightAnswerForRound, $question)
+function runEngine($getRightAnswerForRound, string $question): void
 {
     line('Welcome to the Brain Game!');
     $name = prompt('May I have your name?');
