@@ -10,9 +10,9 @@ const ITERATIONS_COUNT = 3;
 function runEngine($getRightAnswerForRound, $question)
 {
     line('Welcome to the Brain Game!');
-    line($question);
     $name = prompt('May I have your name?');
     line('Hello, %s!', $name);
+    line($question);
 
     for ($i = 0; $i < ITERATIONS_COUNT; $i++) {
         ['roundQuestion' => $roundQuestion, 'rightAnswer' => $rightAnswer] = $getRightAnswerForRound();
