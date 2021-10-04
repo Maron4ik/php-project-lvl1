@@ -9,7 +9,7 @@ use function BrainGames\roundData;
 /**
  * @throws Exception
  */
-function generateComputedExpression(int $firstNumber, int $secondNumber, string $operation): float|int
+function generateComputedExpression(int $firstNumber, int $secondNumber, string $operation): int
 {
     switch ($operation) {
         case '+':
