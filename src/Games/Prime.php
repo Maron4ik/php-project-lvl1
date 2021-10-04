@@ -2,7 +2,7 @@
 
 namespace BrainGames\Games;
 
-use function BrainGames\runEngine;
+use function BrainGames\roundData;
 
 function isPrime(int $number): bool
 {
@@ -39,5 +39,5 @@ function runPrimeGame(): void
         return ['roundQuestion' => $roundQuestion, 'rightAnswer' => $rightAnswer];
     };
 
-    runEngine($getRightAnswerForRound, 'Answer "yes" if given number is prime. Otherwise answer "no".');
+    roundData($getRightAnswerForRound, 'Answer "yes" if given number is prime. Otherwise answer "no".');
 }

@@ -2,7 +2,7 @@
 
 namespace BrainGames\Games;
 
-use function BrainGames\runEngine;
+use function BrainGames\roundData;
 
 function getGCD(int $firstNumber, int $secondNumber): float|int
 {
@@ -25,5 +25,5 @@ function runGcdGame(): void
         return ['roundQuestion' => $roundQuestion, 'rightAnswer' => (string)$rightAnswer];
     };
 
-    runEngine($getRightAnswerForRound, 'Find the greatest common divisor of given numbers.');
+    roundData($getRightAnswerForRound, 'Find the greatest common divisor of given numbers.');
 }

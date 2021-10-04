@@ -2,7 +2,7 @@
 
 namespace BrainGames\Games;
 
-use function BrainGames\runEngine;
+use function BrainGames\roundData;
 
 function isEven(int $number): bool
 {
@@ -20,5 +20,5 @@ function runEvenGame(): void
         return ['roundQuestion' => $roundQuestion, 'rightAnswer' => $rightAnswer];
     };
 
-    runEngine($getRightAnswerForRound, 'Answer "yes" if the number is even, otherwise answer "no".');
+    roundData($getRightAnswerForRound, 'Answer "yes" if the number is even, otherwise answer "no".');
 }

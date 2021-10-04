@@ -5,16 +5,16 @@ namespace BrainGames;
 use function cli\line;
 use function cli\prompt;
 
-const ITERATIONS_COUNT = 3;
+const ROUNDS_COUNT = 3;
 
-function runEngine(callable $getRightAnswerForRound, string $question): void
+function roundData(callable $getRightAnswerForRound, string $question): void
 {
     line('Welcome to the Brain Game!');
     $name = prompt('May I have your name?');
     line('Hello, %s!', $name);
     line($question);
 
-    for ($i = 0; $i < ITERATIONS_COUNT; $i++) {
+    for ($i = 0; $i < ROUNDS_COUNT; $i++) {
         ['roundQuestion' => $roundQuestion, 'rightAnswer' => $rightAnswer] = $getRightAnswerForRound();
 
         line("Question: {$roundQuestion}");

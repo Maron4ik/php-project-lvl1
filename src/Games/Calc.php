@@ -2,9 +2,12 @@
 
 namespace BrainGames\Games;
 
-use function BrainGames\runEngine;
+use function BrainGames\roundData;
 
-function generateComputedExpression(int $firstNumber, int $secondNumber, string $operation): ?int
+/**
+ * @throws \Exception
+ */
+function generateComputedExpression(int $firstNumber, int $secondNumber, string $operation): int|null
 {
     switch ($operation) {
         case '+':
@@ -17,7 +20,7 @@ function generateComputedExpression(int $firstNumber, int $secondNumber, string 
             $result = $firstNumber * $secondNumber;
             break;
         default:
-            return null;
+            throw new \Exception("Is there something wrong");
     }
 
     return $result;
@@ -25,7 +28,7 @@ function generateComputedExpression(int $firstNumber, int $secondNumber, string 
 
 function runCalculationGame(): void
 {
-    $getRightAnswerForRound = function (): array {
+    $getRightAnswer = function (): array {
         $randomTopNumber = 10;
         $firstNumber = rand(0, $randomTopNumber);
         $secondNumber = rand(0, $randomTopNumber);
@@ -39,5 +42,5 @@ function runCalculationGame(): void
         return ['roundQuestion' => $roundQuestion, 'rightAnswer' => (string)$rightAnswer];
     };
 
-    runEngine($getRightAnswerForRound, 'What is the result of the expression?');
+    roundData($getRightAnswer, 'What is the result of the expression?');
 }
