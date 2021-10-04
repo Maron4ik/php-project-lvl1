@@ -2,6 +2,8 @@
 
 namespace BrainGames\Games;
 
+use Exception;
+
 use function BrainGames\roundData;
 
 function getGCD(int $firstNumber, int $secondNumber): float|int
@@ -15,10 +17,13 @@ function getGCD(int $firstNumber, int $secondNumber): float|int
 
 function runGcdGame(): void
 {
+    /**
+     * @throws Exception
+     */
     $getRightAnswerForRound = function (): array {
         $randomTopNumber = 100;
-        $firstNumber = rand(0, $randomTopNumber);
-        $secondNumber = rand(0, $randomTopNumber);
+        $firstNumber = random_int(0, $randomTopNumber);
+        $secondNumber = random_int(0, $randomTopNumber);
         $rightAnswer = getGCD($firstNumber, $secondNumber);
         $roundQuestion = "{$firstNumber} {$secondNumber}";
 

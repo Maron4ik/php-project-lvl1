@@ -2,6 +2,8 @@
 
 namespace BrainGames\Games;
 
+use Exception;
+
 use function BrainGames\roundData;
 
 function isPrime(int $number): bool
@@ -9,16 +11,16 @@ function isPrime(int $number): bool
     if ($number < 2) {
         return false;
     }
-    if ($number == 2) {
+    if ($number === 2) {
         return true;
     }
-    if ($number % 2 == 0) {
+    if ($number % 2 === 0) {
         return false;
     }
     $i = 3;
     $maxCount = (int)sqrt($number);
     while ($i <= $maxCount) {
-        if ($number % $i == 0) {
+        if ($number % $i === 0) {
             return false;
         }
 
@@ -30,9 +32,12 @@ function isPrime(int $number): bool
 
 function runPrimeGame(): void
 {
+    /**
+     * @throws Exception
+     */
     $getRightAnswerForRound = function (): array {
         $randomTopNumber = 100;
-        $number = rand(0, $randomTopNumber);
+        $number = random_int(0, $randomTopNumber);
         $rightAnswer = isPrime($number) ? 'yes' : 'no';
         $roundQuestion = $number;
 

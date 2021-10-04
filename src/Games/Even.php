@@ -2,6 +2,8 @@
 
 namespace BrainGames\Games;
 
+use Exception;
+
 use function BrainGames\roundData;
 
 function isEven(int $number): bool
@@ -11,9 +13,12 @@ function isEven(int $number): bool
 
 function runEvenGame(): void
 {
+    /**
+     * @throws Exception
+     */
     $getRightAnswerForRound = function (): array {
         $randomTopNumber = 100;
-        $number = rand(0, $randomTopNumber);
+        $number = random_int(0, $randomTopNumber);
         $rightAnswer = isEven($number) ? 'yes' : 'no';
         $roundQuestion = $number;
 

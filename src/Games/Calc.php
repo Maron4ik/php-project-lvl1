@@ -2,10 +2,12 @@
 
 namespace BrainGames\Games;
 
+use Exception;
+
 use function BrainGames\roundData;
 
 /**
- * @throws \Exception
+ * @throws Exception
  */
 function generateComputedExpression(int $firstNumber, int $secondNumber, string $operation): int|null
 {
@@ -20,7 +22,7 @@ function generateComputedExpression(int $firstNumber, int $secondNumber, string 
             $result = $firstNumber * $secondNumber;
             break;
         default:
-            throw new \Exception("Is there something wrong");
+            throw new Exception("Is there something wrong");
     }
 
     return $result;
@@ -28,10 +30,13 @@ function generateComputedExpression(int $firstNumber, int $secondNumber, string 
 
 function runCalculationGame(): void
 {
+    /**
+     * @throws Exception
+     */
     $getRightAnswer = function (): array {
         $randomTopNumber = 10;
-        $firstNumber = rand(0, $randomTopNumber);
-        $secondNumber = rand(0, $randomTopNumber);
+        $firstNumber = random_int(0, $randomTopNumber);
+        $secondNumber = random_int(0, $randomTopNumber);
         $operations = ['+', '-', '*'];
         $randKey = array_rand($operations);
         $operation = $operations[$randKey];
