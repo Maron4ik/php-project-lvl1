@@ -4,10 +4,11 @@ namespace BrainGames\Games;
 
 use function BrainGames\runEngine;
 
-function isEven(bool $number): bool
+function isEven($number): bool
 {
     return $number % 2 === 0;
 }
+
 function runEvenGame(): void
 {
     $getRightAnswerForRound = function () {

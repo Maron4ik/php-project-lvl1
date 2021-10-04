@@ -39,5 +39,5 @@ function runCalculationGame(): void
         return ['roundQuestion' => $roundQuestion, 'rightAnswer' => $rightAnswer];
     };
 
-    runEngine((array)$getRightAnswerForRound, 'What is the result of the expression?');
+    runEngine($getRightAnswerForRound, 'What is the result of the expression?');
 }
