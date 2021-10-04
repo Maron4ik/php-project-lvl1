@@ -30,7 +30,7 @@ function isPrime(int $number): bool
 
 function runPrimeGame(): void
 {
-    $getRightAnswerForRound = function () {
+    $getRightAnswerForRound = function (): array {
         $randomTopNumber = 100;
         $number = rand(0, $randomTopNumber);
         $rightAnswer = isPrime($number) ? 'yes' : 'no';

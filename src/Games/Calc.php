@@ -25,7 +25,7 @@ function generateComputedExpression(int $firstNumber, int $secondNumber, string 
 
 function runCalculationGame(): void
 {
-    $getRightAnswerForRound = function () {
+    $getRightAnswerForRound = function (): array {
         $randomTopNumber = 10;
         $firstNumber = rand(0, $randomTopNumber);
         $secondNumber = rand(0, $randomTopNumber);

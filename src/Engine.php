@@ -7,7 +7,7 @@ use function cli\prompt;
 
 const ITERATIONS_COUNT = 3;
 
-function runEngine($getRightAnswerForRound, $question)
+function runEngine(callable $getRightAnswerForRound, string $question): void
 {
     line('Welcome to the Brain Game!');
     $name = prompt('May I have your name?');
@@ -20,7 +20,7 @@ function runEngine($getRightAnswerForRound, $question)
         line("Question: {$roundQuestion}");
         $answerUser = prompt('Your answer');
 
-        if ($answerUser == $rightAnswer) {
+        if ($answerUser === $rightAnswer) {
             line('Correct!');
         } else {
             line("{$answerUser}  is wrong answer ;(. Correct answer was {$rightAnswer}");
@@ -28,7 +28,5 @@ function runEngine($getRightAnswerForRound, $question)
             return;
         }
     }
-
     line("Congratulations, {$name}!");
-    return;
 }
