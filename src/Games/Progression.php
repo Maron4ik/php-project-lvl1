@@ -20,7 +20,7 @@ function runProgressionGame(): void
         $rightAnswer = $array[$skippedKey];
         $array[$skippedKey] = '..';
         $roundQuestion = implode(' ', $array);
-        return ['roundQuestion' => $roundQuestion, 'rightAnswer' => $rightAnswer];
+        return ['roundQuestion' => $roundQuestion, 'rightAnswer' => (string)$rightAnswer];
     };
     runEngine($getRightAnswerForRound, 'What number is missing in the progression?');
 }

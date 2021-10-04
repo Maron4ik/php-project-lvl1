@@ -36,7 +36,7 @@ function runCalculationGame(): void
 
         $roundQuestion = "{$firstNumber} {$operation} {$secondNumber}";
 
-        return ['roundQuestion' => $roundQuestion, 'rightAnswer' => $rightAnswer];
+        return ['roundQuestion' => $roundQuestion, 'rightAnswer' => (string)$rightAnswer];
     };
 
     runEngine($getRightAnswerForRound, 'What is the result of the expression?');

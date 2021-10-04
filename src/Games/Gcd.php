@@ -22,7 +22,7 @@ function runGcdGame(): void
         $rightAnswer = getGCD($firstNumber, $secondNumber);
         $roundQuestion = "{$firstNumber} {$secondNumber}";
 
-        return ['roundQuestion' => $roundQuestion, 'rightAnswer' => $rightAnswer];
+        return ['roundQuestion' => $roundQuestion, 'rightAnswer' => (string)$rightAnswer];
     };
 
     runEngine($getRightAnswerForRound, 'Find the greatest common divisor of given numbers.');
