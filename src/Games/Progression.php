@@ -6,7 +6,7 @@ use Exception;
 
 use function BrainGames\roundData;
 
-function generateProgression(int $randomFirstNumber,int $randomStepProgression, int $randomArrLength): array
+function generateProgression(int $randomFirstNumber, int $randomStepProgression, int $randomArrLength): array
 {
     $array = [];
 
