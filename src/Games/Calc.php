@@ -46,6 +46,6 @@ function runCalculationGame(): void
 
         return ['roundQuestion' => $roundQuestion, 'rightAnswer' => (string)$rightAnswer];
     };
-
-    roundData($getRightAnswer, 'What is the result of the expression?');
+    $question = 'What is the result of the expression?';
+    roundData($getRightAnswer, $question);
 }

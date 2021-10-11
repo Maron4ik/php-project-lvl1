@@ -43,6 +43,6 @@ function runPrimeGame(): void
 
         return ['roundQuestion' => $roundQuestion, 'rightAnswer' => $rightAnswer];
     };
-
-    roundData($getRightAnswerForRound, 'Answer "yes" if given number is prime. Otherwise answer "no".');
+    $question = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+    roundData($getRightAnswerForRound, $question);
 }

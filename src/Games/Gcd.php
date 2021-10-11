@@ -29,6 +29,6 @@ function runGcdGame(): void
 
         return ['roundQuestion' => $roundQuestion, 'rightAnswer' => (string)$rightAnswer];
     };
-
-    roundData($getRightAnswerForRound, 'Find the greatest common divisor of given numbers.');
+    $question = 'Find the greatest common divisor of given numbers.';
+    roundData($getRightAnswerForRound, $question);
 }

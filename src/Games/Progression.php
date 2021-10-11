@@ -24,16 +24,16 @@ function runProgressionGame(): void
      * @throws Exception
      */
     $getRightAnswerForRound = function (): array {
-        $randomFirstNumber = random_int(0, 10);
-        $randomStepProgression = random_int(1, 5);
-        $randomArrLength = random_int(5, 10);
-        $array = generateProgression($randomFirstNumber, $randomStepProgression, $randomArrLength);
-        $skippedKey = random_int(0, count($array) - 1);
-        $rightAnswer = $array[$skippedKey];
-        $array[$skippedKey] = '..';
-        $roundQuestion = implode(' ', $array);
+        $randFirstNum = random_int(0, 10);
+        $randStepProgression = random_int(1, 5);
+        $randArrLength = random_int(5, 10);
+        $progression = generateProgression($randFirstNum, $randStepProgression, $randArrLength);
+        $skippedKey = random_int(0, count($progression) - 1);
+        $rightAnswer = $progression[$skippedKey];
+        $progression[$skippedKey] = '..';
+        $roundQuestion = implode(' ', $progression);
         return ['roundQuestion' => $roundQuestion, 'rightAnswer' => (string)$rightAnswer];
     };
-
-    roundData($getRightAnswerForRound, 'What number is missing in the progression?');
+    $question = 'What number is missing in the progression?';
+    roundData($getRightAnswerForRound, $question);
 }
